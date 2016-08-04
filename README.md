@@ -28,7 +28,7 @@ public class Example {
 		// Example using request object builder (for detailed query) 
 		try {
 			client.createMessage(new MessageRequest.Builder()
-				.withTo(PHONE)
+				.withTo("PHONE_NUMBER")
 				.withMessage("YOUR_MESSAGE")
 				.withFrom("FROM_WHO")
 				.withTimeScheduled("DD/MM/YYYY")
