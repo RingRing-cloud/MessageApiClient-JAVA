@@ -18,14 +18,14 @@ public class Example {
         Authentication token = new Authentication("YOUR_ACCESS_KEY");
         MessageClient client = new MessageClient(token);
 		
-		// Example using simple parameters (usually mandatory parameters)
+		// Example using simple parameters (mandatory parameters)
 		try {
 			client.createMessage("PHONE_NUMBER", "YOUR_MESSAGE");
 		} catch (MessageException e) {
 			// ...
 		}
 		
-		// Example using request object (for detailed query) 
+		// Example using request object builder (for detailed query) 
 		try {
 			client.createMessage(new MessageRequest.Builder()
 				.withTo(PHONE)
