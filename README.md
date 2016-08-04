@@ -46,7 +46,7 @@ public class Example {
 
 # Version
 
-Java SE 6
+Java SE 6 or more
 
 # Installation
 
