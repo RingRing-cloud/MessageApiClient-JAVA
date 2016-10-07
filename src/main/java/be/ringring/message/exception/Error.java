@@ -85,7 +85,7 @@ public enum Error {
 	
 	public static Error findByCode(Integer code) {
 		for (Error error : Error.values()) {
-			if (error.code == code) {
+			if (error.code.equals(code)) {
 				return error;
 			}
 		}
