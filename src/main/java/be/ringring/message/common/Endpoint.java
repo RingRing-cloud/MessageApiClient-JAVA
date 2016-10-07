@@ -17,7 +17,7 @@ public enum Endpoint {
 	private String url;
 	
 	private Endpoint(String version) {
-		this.url = String.format(Property.getInstance().get("ws-url"), version);
+		this.url = String.format("https://api.ringring.be/sms/%s", version);
 	}
 	
 	/**

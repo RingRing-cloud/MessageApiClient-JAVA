@@ -132,7 +132,16 @@ public class MessageServiceImpl implements MessageService {
 			
 			int responseCode = connection.getResponseCode();
 			
-			if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
+			if (responseCode == HttpURLConnection.HTTP_BAD_REQUEST) {
+				
+				inputStream = connection.getErrorStream();
+				ObjectMapper mapper = new ObjectMapper();
+				mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+				T result = mapper.readValue(inputStream, type);
+				LOGGER.info("Response : {}", result);
+				return result;
+				
+			} else if (responseCode == HttpURLConnection.HTTP_OK || responseCode == HttpURLConnection.HTTP_CREATED) {
 				
 				inputStream = connection.getInputStream();
 				ObjectMapper mapper = new ObjectMapper();
