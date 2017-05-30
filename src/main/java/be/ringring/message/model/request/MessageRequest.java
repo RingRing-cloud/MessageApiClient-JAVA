@@ -43,6 +43,10 @@ public class MessageRequest extends AbstractRequest {
 	
 	@JsonProperty("StatusFormat")
 	private String statusFormat;
+	
+	@JsonProperty("MessageEncoding")
+	private Integer messageEncoding;
+	
 
 	private MessageRequest(String apiKey) {
 		super(apiKey);
@@ -149,6 +153,16 @@ public class MessageRequest extends AbstractRequest {
 	}
 	
 	/**
+	 * Getter for the <code>messageEncoding</code> attribute
+	 * @return the <code>messageEncoding</code> value
+	**/
+	
+	public Integer getMessageEncoding() {
+		return messageEncoding;
+	}	
+	
+	
+	/**
 	 * Request builder.
 	**/
 	
@@ -165,6 +179,7 @@ public class MessageRequest extends AbstractRequest {
 		private String statusURL;
 		private String statusMethod;
 		private String statusFormat;
+		private Integer messageEncoding;
 
 		/**
 		 * Add the <code>to</code> value in the builder object.
@@ -286,6 +301,17 @@ public class MessageRequest extends AbstractRequest {
 			this.statusFormat = statusFormat;
 			return this;
 		}
+		
+		/**
+		 * Add the <code>messageEncoding</code> value in the builder object.
+		 * @param messageEncoding The <code>messageEncoding</code> value to set.
+		 * @return Return the Builder itself for chaining call.
+		**/
+		
+		public Builder withMessageEncoding(MessageEncoding messageEncoding) {
+			this.messageEncoding = messageEncoding.getCode();
+			return this;
+		}
 	
 		/**
 		 * @inheritDoc
@@ -305,6 +331,7 @@ public class MessageRequest extends AbstractRequest {
 			request.statusURL = this.statusURL;
 			request.statusMethod = this.statusMethod;
 			request.statusFormat = this.statusFormat;
+			request.messageEncoding = this.messageEncoding;
 			return request;
 		}
 	

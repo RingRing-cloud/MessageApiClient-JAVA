@@ -6,6 +6,7 @@ import be.ringring.message.exception.Error;
 import be.ringring.message.exception.MessageException;
 import be.ringring.message.model.request.CancelRequest;
 import be.ringring.message.model.request.IncomingMessageRequest;
+import be.ringring.message.model.request.MessageEncoding;
 import be.ringring.message.model.request.MessageRequest;
 import be.ringring.message.model.request.MessageStatusRequest;
 import be.ringring.message.model.request.OutgoingMessageStatusRequest;
@@ -90,10 +91,11 @@ public class MessageClient {
 	 * @throws MessageException Throws and exception with a detailed {@link Error} if a problem occurs.
 	**/
 	
-	public MessageResponse createMessage(String to, String message) throws MessageException {
+	public MessageResponse createMessage(String to, String message, MessageEncoding encoding) throws MessageException {
 		return this.createMessage(new MessageRequest.Builder()
 			.withTo(to)
 			.withMessage(message)
+			.withMessageEncoding(encoding)
 			.build()
 		);
 	}
