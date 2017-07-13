@@ -6,7 +6,7 @@
 	
 	<groupId>be.ringring</groupId>
 	<artifactId>message-api-client</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>1.0.1-Final</version>
 	
 	<name>MessageApiClient</name>
 	<description>MessageApiClient provide method to send or cancel sms message and retrieve status for outgoing and incoming messages</description>
@@ -21,12 +21,7 @@
 	
 	<dependencies>
 	
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-context</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
+		<!-- SPRING DEPENDENCIES -->
 	    <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
@@ -36,28 +31,8 @@
 		<!-- JACKSON DEPENDENCIES -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-core</artifactId>
-		    <version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-annotations</artifactId>
-		    <version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>${jackson.version}</version>
-		    <exclusions>
-		    	<exclusion>
-		    		<groupId>com.fasterxml.jackson.core</groupId>
-		    		<artifactId>jackson-core</artifactId>
-		    	</exclusion>
-		    	<exclusion>
-		    		<groupId>com.fasterxml.jackson.core</groupId>
-		    		<artifactId>jackson-annotations</artifactId>
-		    	</exclusion>
-		    </exclusions>
 		</dependency>
 		
 		<!-- LOGGING DEPENDENCIES -->
@@ -83,6 +58,7 @@
 	</dependencies>
 	
 	<build>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

@@ -45,7 +45,7 @@ public class MessageRequest extends AbstractRequest {
 	private String statusFormat;
 	
 	@JsonProperty("MessageEncoding")
-	private Integer messageEncoding;
+	private String messageEncoding;
 	
 
 	private MessageRequest(String apiKey) {
@@ -157,7 +157,7 @@ public class MessageRequest extends AbstractRequest {
 	 * @return the <code>messageEncoding</code> value
 	**/
 	
-	public Integer getMessageEncoding() {
+	public String getMessageEncoding() {
 		return messageEncoding;
 	}	
 	
@@ -179,7 +179,7 @@ public class MessageRequest extends AbstractRequest {
 		private String statusURL;
 		private String statusMethod;
 		private String statusFormat;
-		private Integer messageEncoding;
+		private String messageEncoding;
 
 		/**
 		 * Add the <code>to</code> value in the builder object.
@@ -309,7 +309,7 @@ public class MessageRequest extends AbstractRequest {
 		**/
 		
 		public Builder withMessageEncoding(MessageEncoding messageEncoding) {
-			this.messageEncoding = messageEncoding.getCode();
+			this.messageEncoding = messageEncoding.getValue();
 			return this;
 		}
 	

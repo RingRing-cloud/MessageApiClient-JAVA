@@ -16,7 +16,7 @@ public class MessageStatus {
 	private String reference;
 	
 	@JsonProperty("StatusCode")
-	private String statusCode;
+	private Integer statusCode;
 	
 	@JsonProperty("StatusDescription")
 	private String statusDescription;
@@ -58,11 +58,11 @@ public class MessageStatus {
 		this.reference = reference;
 	}
 
-	public String getStatusCode() {
+	public Integer getStatusCode() {
 		return statusCode;
 	}
 
-	public void setStatusCode(String statusCode) {
+	public void setStatusCode(Integer statusCode) {
 		this.statusCode = statusCode;
 	}
 

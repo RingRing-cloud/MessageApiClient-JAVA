@@ -17,9 +17,9 @@ public class MessageStatusResponse extends AbstractResponse {
 	private String reference;
 	
 	@JsonProperty("StatusCode")
-	private String statusCode;
+	private Integer statusCode;
 	
-	@JsonProperty("statusDescription")
+	@JsonProperty("StatusDescription")
 	private String statusDescription;
 	
 	@JsonProperty("TimeSubmitted")
@@ -56,11 +56,11 @@ public class MessageStatusResponse extends AbstractResponse {
 		this.reference = reference;
 	}
 
-	public String getStatusCode() {
+	public Integer getStatusCode() {
 		return statusCode;
 	}
 
-	public void setStatusCode(String statusCode) {
+	public void setStatusCode(Integer statusCode) {
 		this.statusCode = statusCode;
 	}
 

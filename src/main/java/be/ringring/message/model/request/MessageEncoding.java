@@ -2,17 +2,17 @@ package be.ringring.message.model.request;
 
 public enum MessageEncoding {
 
-	GSM0338(0),
-	UNICODE(8);
+	GSM0338("Text"),
+	UNICODE("Unicode");
 	
-	private Integer code;
+	private String value;
 	
-	private MessageEncoding(Integer code) {
-		this.code = code;
+	private MessageEncoding(String value) {
+		this.value = value;
 	}
 	
-	public Integer getCode() {
-		return code;
+	public String getValue() {
+		return value;
 	}
 	
 }
