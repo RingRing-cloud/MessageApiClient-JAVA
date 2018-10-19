@@ -91,6 +91,23 @@ public class MessageClient {
 	 * @throws MessageException Throws and exception with a detailed {@link Error} if a problem occurs.
 	**/
 	
+	public MessageResponse createMessage(String to, String message) throws MessageException {
+		return this.createMessage(new MessageRequest.Builder()
+			.withTo(to)
+			.withMessage(message)
+			.build()
+		);
+	}
+	
+	
+	/**
+	 * Create and send a message to somebody using mandatory data.
+	 * @param to The target where the message have to be send.
+	 * @param message The message to send.
+	 * @return Return a {@link MessageResponse} with response details.
+	 * @throws MessageException Throws and exception with a detailed {@link Error} if a problem occurs.
+	**/
+	
 	public MessageResponse createMessage(String to, String message, MessageEncoding encoding) throws MessageException {
 		return this.createMessage(new MessageRequest.Builder()
 			.withTo(to)

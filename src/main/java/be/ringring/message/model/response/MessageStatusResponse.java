@@ -3,12 +3,11 @@ package be.ringring.message.model.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * POJO with cancel response. 
+ * POJO with response. 
 **/
 public class MessageStatusResponse extends AbstractResponse {
 
 	
-	//--- PROPERTIES -------------------------------------//
 	
 	@JsonProperty("MessageId")
 	private String messageId;
@@ -17,10 +16,13 @@ public class MessageStatusResponse extends AbstractResponse {
 	private String reference;
 	
 	@JsonProperty("StatusCode")
-	private Integer statusCode;
+	private String statusCode;
 	
 	@JsonProperty("StatusDescription")
 	private String statusDescription;
+		
+	@JsonProperty("TimeScheduled")
+	private String timeScheduled;
 	
 	@JsonProperty("TimeSubmitted")
 	private String timeSubmitted;
@@ -31,14 +33,24 @@ public class MessageStatusResponse extends AbstractResponse {
 	@JsonProperty("Country")
 	private String country;
 	
+	@JsonProperty("From")
+	private String from;
+	
 	@JsonProperty("To")
 	private String to;
 	
 	@JsonProperty("Message")
 	private String message;
-
 	
-	//--- GETTERS AND SETTERS ----------------------------//
+	@JsonProperty("MessageEncoding")
+	private String messageEncoding;
+
+	@JsonProperty("NumberOfParts")
+	private int numberOfParts;
+
+	@JsonProperty("NumberOfChars")
+	private int numberOfChars;
+	
 	
 	public String getMessageId() {
 		return messageId;
@@ -56,11 +68,11 @@ public class MessageStatusResponse extends AbstractResponse {
 		this.reference = reference;
 	}
 
-	public Integer getStatusCode() {
+	public String getStatusCode() {
 		return statusCode;
 	}
 
-	public void setStatusCode(Integer statusCode) {
+	public void setStatusCode(String statusCode) {
 		this.statusCode = statusCode;
 	}
 
@@ -110,7 +122,47 @@ public class MessageStatusResponse extends AbstractResponse {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}	
+
+	public String getTimeScheduled() {
+		return timeScheduled;
 	}
 
+	public void setTimeScheduled(String timeScheduled) {
+		this.timeScheduled = timeScheduled;
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	public String getMessageEncoding() {
+		return messageEncoding;
+	}
+
+	public void setMessageEncoding(String messageEncoding) {
+		this.messageEncoding = messageEncoding;
+	}
+
+	public int getNumberOfParts() {
+		return numberOfParts;
+	}
+
+	public void setNumberOfParts(int numberOfParts) {
+		this.numberOfParts = numberOfParts;
+	}
+
+	public int getNumberOfChars() {
+		return numberOfChars;
+	}
+
+	public void setNumberOfChars(int numberOfChars) {
+		this.numberOfChars = numberOfChars;
+	}
+	
 	
 }
