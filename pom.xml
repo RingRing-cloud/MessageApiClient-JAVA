@@ -13,7 +13,7 @@
 	
 	<properties>
 		<spring.version>5.1.1.RELEASE</spring.version>
-		<jackson.version>2.9.7</jackson.version>
+		<jackson.version>2.9.10.8</jackson.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<junit.version>4.12</junit.version>
 		<mockito.version>1.10.19</mockito.version>
